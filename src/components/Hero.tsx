@@ -6,12 +6,14 @@ import logo from "@/assets/logo-2kad.png";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-subtle overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+      <div className="absolute inset-0 bg-gradient-overlay" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-glow blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-glow blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 hover:bg-primary/20 hover:shadow-glow transition-all duration-300">
               <img src={logo} alt="2kad.ru" className="h-6" />
               <span className="text-sm font-medium text-primary">Основатель компании с 2012 года</span>
             </div>
@@ -21,7 +23,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Предприниматель, кадастровый инженер, геодезист и IT-инноватор
+              Кадастровый инженер | Геодезист | Картограф | IT‑инноватор | Тендерный специалист | Урбанист
             </p>
             
             <div className="flex items-center gap-2 text-muted-foreground">

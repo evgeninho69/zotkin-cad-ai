@@ -31,11 +31,14 @@ const contactMethods = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-gradient-subtle relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-overlay opacity-40" />
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-glow blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 backdrop-blur-sm rounded-full mb-4 border border-accent/20 hover:bg-accent/20 hover:shadow-glow-accent transition-all duration-300">
               <Mail className="h-4 w-4 text-accent" />
               <span className="text-sm font-medium text-accent">Контакты</span>
             </div>
@@ -45,7 +48,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <Card className="p-8 bg-gradient-subtle shadow-xl border-none animate-slide-up">
+          <Card className="p-8 backdrop-blur-lg bg-card/80 border-accent/20 shadow-glow-accent animate-slide-up">
             <div className="grid md:grid-cols-2 gap-6">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
@@ -57,9 +60,9 @@ const Contact = () => {
                     rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="group"
                   >
-                    <Card className="p-6 hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-primary bg-card">
+                    <Card className="p-6 backdrop-blur-lg bg-card/70 border-primary/10 hover:border-primary/40 hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
                       <div className="flex items-center gap-4">
-                        <div className="p-3 bg-gradient-hero rounded-lg group-hover:scale-110 transition-transform">
+                        <div className="p-3 bg-gradient-hero rounded-lg group-hover:scale-125 transition-transform duration-300">
                           <Icon className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>

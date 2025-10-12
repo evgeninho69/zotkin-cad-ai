@@ -30,10 +30,13 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section id="achievements" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
+    <section id="achievements" className="py-20 bg-gradient-subtle relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-overlay opacity-50" />
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-gradient-glow blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 backdrop-blur-sm rounded-full mb-4 border border-accent/20 hover:bg-accent/20 hover:shadow-glow-accent transition-all duration-300">
             <Award className="h-4 w-4 text-accent" />
             <span className="text-sm font-medium text-accent">Достижения</span>
           </div>
@@ -49,10 +52,10 @@ const Achievements = () => {
             return (
               <Card
                 key={index}
-                className="p-6 text-center hover:shadow-xl transition-shadow duration-300 border-none bg-card animate-slide-up"
+                className="p-6 text-center backdrop-blur-lg bg-card/80 border-accent/20 hover:border-accent/40 hover:shadow-glow-accent transition-all duration-500 group animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex p-4 bg-gradient-hero rounded-full mb-4">
+                <div className="inline-flex p-4 bg-gradient-hero rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Icon className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-3xl font-bold text-primary mb-2">{achievement.number}</h3>
@@ -63,7 +66,7 @@ const Achievements = () => {
           })}
         </div>
 
-        <Card className="p-8 bg-primary text-primary-foreground shadow-xl border-none animate-fade-in">
+        <Card className="p-8 backdrop-blur-lg bg-gradient-hero border-primary/20 text-primary-foreground shadow-glow hover:shadow-glow-accent transition-all duration-500 animate-fade-in">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Крупный кейс</h3>
             <p className="text-lg mb-4">

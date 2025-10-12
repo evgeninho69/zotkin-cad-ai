@@ -64,10 +64,13 @@ const competencies = [
 
 const Competencies = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-overlay opacity-30" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-glow blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 backdrop-blur-sm rounded-full mb-4 border border-success/20 hover:bg-success/20 hover:shadow-glow transition-all duration-300">
             <Sparkles className="h-4 w-4 text-success" />
             <span className="text-sm font-medium text-success">Компетенции</span>
           </div>
@@ -89,10 +92,10 @@ const Competencies = () => {
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 border-none bg-card group hover:-translate-y-1 animate-slide-up"
+                className="p-6 backdrop-blur-lg bg-card/80 border-primary/10 hover:border-primary/30 hover:shadow-glow transition-all duration-500 group hover:-translate-y-2 animate-slide-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className={`inline-flex p-3 rounded-lg mb-4 ${colorClasses[competency.color as keyof typeof colorClasses]}`}>
+                <div className={`inline-flex p-3 rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300 ${colorClasses[competency.color as keyof typeof colorClasses]}`}>
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{competency.title}</h3>
@@ -105,9 +108,9 @@ const Competencies = () => {
         </div>
 
         <div className="mt-16 max-w-4xl mx-auto">
-          <Card className="p-8 bg-gradient-accent text-accent-foreground shadow-xl border-none animate-fade-in">
+          <Card className="p-8 backdrop-blur-lg bg-gradient-accent border-accent/20 text-accent-foreground shadow-glow-accent hover:scale-105 transition-all duration-500 animate-fade-in group">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-white/20 rounded-lg">
+              <div className="p-3 bg-white/20 rounded-lg group-hover:scale-110 transition-transform duration-300">
                 <Bot className="h-8 w-8" />
               </div>
               <div>
